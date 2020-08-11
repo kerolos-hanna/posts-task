@@ -1,0 +1,12 @@
+.post-container {
+  margin: 12px auto;
+  width: 80%;
+}
+
+.post-form h1 {
+  text-align: center;
+}
+
+.post-form button {
+  margin: 10px 10px 0 0;
+}

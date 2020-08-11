@@ -1,0 +1,46 @@
+<div class="post-container">
+  <button class="btn btn-light" (click)="Back()">Back</button>
+  <div class="post-form">
+    <h1>Post {{ id }}</h1>
+    <div *ngIf="success" class="alert alert-success" role="alert">
+      {{ success }}
+    </div>
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+      {{ error }}
+    </div>
+    <form #postForm="ngForm" (ngSubmit)="onUpdatePost(postForm.value)">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="body">Body</label>
+        <textarea
+          class="form-control"
+          rows="4"
+          id="body"
+          required
+          [(ngModel)]="body"
+          name="body"
+        ></textarea>
+      </div>
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!postForm.valid"
+      >
+        Update Post
+      </button>
+      <button class="btn btn-danger" type="button" (click)="onDeletePost()">
+        Delete Post
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { PostsComponent } from './posts/posts.component';
+import { PostComponent } from './posts/post/post.component';
+
+const routes: Routes = [
+  { path: '', component: PostsComponent },
+  { path: 'posts/:id', component: PostComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
